@@ -1,10 +1,11 @@
 ---
 import "../styles/global.css";
-import WobblyRule from "../components/WobblyRule.astro";
 import Masthead from "../components/Masthead.astro";
 import Lede from "../components/Lede.astro";
 import Itch from "../components/Itch.astro";
 import WhatItIsnt from "../components/WhatItIsnt.astro";
+import Colophon from "../components/Colophon.astro";
+import WobblyRule from "../components/WobblyRule.astro";
 import { SubscribeCard } from "../components/SubscribeCard";
 ---
 <!doctype html>
@@ -12,7 +13,20 @@ import { SubscribeCard } from "../components/SubscribeCard";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>BONK</title>
+    <title>BONK | a workout app i made for myself</title>
+    <meta name="description" content="A workout app I built for myself. It's not done." />
+
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:title" content="BONK" />
+    <meta property="og:description" content="A workout app I built for myself. It's not done." />
+    <meta property="og:image" content="https://ridebonk.com/og.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ridebonk.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,41 +43,42 @@ import { SubscribeCard } from "../components/SubscribeCard";
       <Itch number={1} headline="I wanted an AI coach that wasn't forty bucks a month.">
         <p>
           TrainHero is genuinely good. It&apos;s also pre-baked and pricey. I
-          wanted something that watched my actual rides, knew my actual fitness,
-          and let me say "give me ninety minutes that won&apos;t ruin
-          tomorrow&apos;s gravel" and wrote me a workout. So I built that.
+          wanted something that watched my actual rides, knew my actual
+          fitness, and let me say "give me ninety minutes that won&apos;t
+          ruin tomorrow&apos;s gravel" and wrote me a workout. So I built
+          that.
         </p>
         <figure slot="figure" class="screenshot-slot">
           <div class="screenshot-frame">screenshot: a generated AI workout</div>
           <figcaption class="mono">fig. 1</figcaption>
         </figure>
       </Itch>
-
       <Itch number={2} headline="I wanted to ride a real climb without leaving Australia.">
         <p>
           I wanted to load up the Stelvio, or Alpe d&apos;Huez, or my own
-          driveway, on the trainer and ride it. Not a fake race against ghosts.
-          Just the gradient profile of a real climb, slotted into whatever I was
-          already doing. So I built that too.
+          driveway, on the trainer and ride it. Not a fake race against
+          ghosts. Just the gradient profile of a real climb, slotted into
+          whatever I was already doing. So I built that too.
         </p>
         <figure slot="figure" class="screenshot-slot">
           <div class="screenshot-frame">screenshot: climb mode</div>
           <figcaption class="mono">fig. 2</figcaption>
         </figure>
       </Itch>
-
       <Itch number={3} headline="I wanted it to not be boring.">
         <p>
-          Most cycling apps have the personality of a printer driver. This one
-          doesn&apos;t. There are a handful of coach personalities. You pick
-          one. The post-ride writeups try to be at least slightly interesting.
-          Sometimes they&apos;re at your expense. That&apos;s fine.
+          Most cycling apps have the personality of a printer driver. This
+          one doesn&apos;t. There are a handful of coach personalities. You
+          pick one. The post-ride writeups try to be at least slightly
+          interesting. Sometimes they&apos;re at your expense.
+          That&apos;s fine.
         </p>
       </Itch>
       <WobblyRule />
       <WhatItIsnt />
       <WobblyRule />
       <SubscribeCard client:visible />
+      <Colophon />
     </main>
 
     <style>
