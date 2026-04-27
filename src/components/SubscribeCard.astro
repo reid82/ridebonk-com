@@ -1,0 +1,30 @@
+---
+const email = "reid1@reidbates.com";
+const subject = "BONK tester";
+const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+---
+<aside class="subscribe-card">
+  <h2>Want to try it?</h2>
+  <p>
+    Drop me a line. If something is ready to test I&apos;ll send you a
+    link. No newsletter, no drip campaign, no &quot;we&apos;re sorry to
+    see you go&quot; email if you change your mind.
+  </p>
+  <p class="email-line">
+    <a href={mailto}>{email}</a>
+  </p>
+</aside>
+
+<style>
+  .email-line {
+    margin: 1.1rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+  .email-line a {
+    text-decoration-color: var(--color-mustard);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+</style>
