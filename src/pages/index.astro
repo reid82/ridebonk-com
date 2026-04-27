@@ -3,6 +3,7 @@ import "../styles/global.css";
 import WobblyRule from "../components/WobblyRule.astro";
 import Masthead from "../components/Masthead.astro";
 import Lede from "../components/Lede.astro";
+import Itch from "../components/Itch.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -22,6 +23,60 @@ import Lede from "../components/Lede.astro";
       <Masthead />
       <WobblyRule />
       <Lede />
+      <WobblyRule />
+      <Itch number={1} headline="I wanted an AI coach that wasn't forty bucks a month.">
+        <p>
+          TrainHero is genuinely good. It&apos;s also pre-baked and pricey. I
+          wanted something that watched my actual rides, knew my actual fitness,
+          and let me say "give me ninety minutes that won&apos;t ruin
+          tomorrow&apos;s gravel" and wrote me a workout. So I built that.
+        </p>
+        <figure slot="figure" class="screenshot-slot">
+          <div class="screenshot-frame">screenshot: a generated AI workout</div>
+          <figcaption class="mono">fig. 1</figcaption>
+        </figure>
+      </Itch>
+
+      <Itch number={2} headline="I wanted to ride a real climb without leaving Australia.">
+        <p>
+          I wanted to load up the Stelvio, or Alpe d&apos;Huez, or my own
+          driveway, on the trainer and ride it. Not a fake race against ghosts.
+          Just the gradient profile of a real climb, slotted into whatever I was
+          already doing. So I built that too.
+        </p>
+        <figure slot="figure" class="screenshot-slot">
+          <div class="screenshot-frame">screenshot: climb mode</div>
+          <figcaption class="mono">fig. 2</figcaption>
+        </figure>
+      </Itch>
+
+      <Itch number={3} headline="I wanted it to not be boring.">
+        <p>
+          Most cycling apps have the personality of a printer driver. This one
+          doesn&apos;t. There are a handful of coach personalities. You pick
+          one. The post-ride writeups try to be at least slightly interesting.
+          Sometimes they&apos;re at your expense. That&apos;s fine.
+        </p>
+      </Itch>
     </main>
+
+    <style>
+      .screenshot-slot { margin: 1.5rem 0 0; }
+      .screenshot-frame {
+        aspect-ratio: 9 / 16;
+        max-width: 240px;
+        background: #ffffff80;
+        border: 1px dashed var(--color-ink);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 1rem;
+        color: var(--color-ink);
+        opacity: 0.7;
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+      }
+      figcaption { margin-top: 0.5rem; opacity: 0.6; }
+    </style>
   </body>
 </html>

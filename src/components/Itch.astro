@@ -1,0 +1,46 @@
+---
+interface Props {
+  number: number;
+  headline: string;
+}
+const { number, headline } = Astro.props;
+---
+<article class="itch">
+  <span class="num" aria-hidden="true">{number}.</span>
+  <div class="body">
+    <h2>{headline}</h2>
+    <slot />
+    <slot name="figure" />
+  </div>
+</article>
+
+<style>
+  .itch {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    align-items: start;
+    gap: 0.5rem 1rem;
+    margin: 2rem 0;
+  }
+  .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-mustard);
+    font-size: 4.5rem;
+    line-height: 0.85;
+    text-align: right;
+  }
+  h2 {
+    margin: 0.6rem 0 0.6rem;
+    font-size: 1.4rem;
+    line-height: 1.25;
+  }
+  @media (max-width: 30rem) {
+    .itch {
+      grid-template-columns: 3.2rem 1fr;
+    }
+    .num {
+      font-size: 3.2rem;
+    }
+  }
+</style>
