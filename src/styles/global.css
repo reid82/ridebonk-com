@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f5efe2;
+  --color-ink: #1b1b1b;
+  --color-mustard: #d4a017;
+  --color-navy: #1a3a5c;
+
+  --font-display: "Source Serif 4", "Iowan Old Style", "Charter", Georgia, serif;
+  --font-body: "Iowan Old Style", "Charter", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 6vw, 2rem) 6rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 1.2em;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-mustard);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4em;
+  line-height: 0.85;
+  float: left;
+  margin: 0.05em 0.12em 0 -0.03em;
+  color: var(--color-mustard);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
