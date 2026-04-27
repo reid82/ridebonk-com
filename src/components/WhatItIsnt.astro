@@ -1,0 +1,43 @@
+---
+const items = [
+  "Not finished. The App Store does not know about it yet.",
+  "Not free of bugs. There are several. Some of them are charming.",
+  "Not for everyone. Probably not for most people.",
+  "Not a startup. Not raising. Not hiring. Just me.",
+  "Not a replacement for TrainerRoad or Zwift. They're great. This is mine.",
+];
+---
+<section class="not">
+  <h2>What it isn&apos;t</h2>
+  <ul>
+    {items.map((item) => <li>{item}</li>)}
+  </ul>
+</section>
+
+<style>
+  h2 {
+    font-size: 1.4rem;
+    margin: 0 0 0.8rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    position: relative;
+    padding: 0.4rem 0 0.4rem 1.6rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  }
+  li:first-child { border-top: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent); }
+  li::before {
+    content: "\00b7";
+    position: absolute;
+    left: 0.3rem;
+    top: 0.4rem;
+    color: var(--color-mustard);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+</style>
