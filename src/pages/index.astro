@@ -5,6 +5,7 @@ import Masthead from "../components/Masthead.astro";
 import Lede from "../components/Lede.astro";
 import Itch from "../components/Itch.astro";
 import WhatItIsnt from "../components/WhatItIsnt.astro";
+import { SubscribeCard } from "../components/SubscribeCard";
 ---
 <!doctype html>
 <html lang="en">
@@ -61,6 +62,8 @@ import WhatItIsnt from "../components/WhatItIsnt.astro";
       </Itch>
       <WobblyRule />
       <WhatItIsnt />
+      <WobblyRule />
+      <SubscribeCard client:visible />
     </main>
 
     <style>
