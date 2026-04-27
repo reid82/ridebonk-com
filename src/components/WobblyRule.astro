@@ -1,0 +1,24 @@
+---
+const seed = Math.random();
+const angle = (seed - 0.5) * 1.0;
+const dy1 = (Math.random() - 0.5) * 4;
+const dy2 = (Math.random() - 0.5) * 4;
+const dy3 = (Math.random() - 0.5) * 4;
+---
+<svg
+  role="presentation"
+  aria-hidden="true"
+  viewBox="0 0 600 12"
+  preserveAspectRatio="none"
+  width="100%"
+  height="12"
+  style={`display:block;margin:3rem 0;transform:rotate(${angle}deg);`}
+>
+  <path
+    d={`M 4 6 Q 150 ${6 + dy1} 300 6 T ${500 + dy2} ${6 + dy3} T 596 6`}
+    stroke="var(--color-ink)"
+    stroke-width="1.6"
+    fill="none"
+    stroke-linecap="round"
+  />
+</svg>
