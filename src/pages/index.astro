@@ -43,16 +43,24 @@ import { SubscribeCard } from "../components/SubscribeCard";
       <WobblyRule />
       <Itch number={1} headline="I wanted an AI coach that wasn't forty bucks a month.">
         <p>
-          TrainHero is genuinely good. It&apos;s also pre-baked and pricey. I
-          wanted something that watched my actual rides, knew my actual
-          fitness, and let me say "give me ninety minutes that won&apos;t
-          ruin tomorrow&apos;s gravel" and wrote me a workout. So I built
-          that.
+          Zwift, TrainerRoad, Rouvy are all genuinely good. They&apos;re
+          also genuinely not free. And I could never find the exact
+          workout I wanted, and sure as shit couldn&apos;t be fucked
+          designing one in their editor. I wanted something that watched
+          my actual rides, knew my actual fitness, and let me say "give
+          me ninety minutes that won&apos;t ruin tomorrow&apos;s gravel"
+          and wrote me a workout. So I built that.
         </p>
-        <figure slot="figure" class="screenshot-slot">
-          <div class="screenshot-frame">screenshot: a generated AI workout</div>
-          <figcaption class="mono">fig. 1</figcaption>
-        </figure>
+        <div slot="figure" class="screenshot-pair">
+          <figure class="screenshot-slot">
+            <img src="/screenshots/train-picker.png" alt="Train screen with sliders for time, style, legs, and energy" loading="lazy" />
+            <figcaption class="mono">fig. 1a · tell it what you&apos;ve got</figcaption>
+          </figure>
+          <figure class="screenshot-slot">
+            <img src="/screenshots/workout-ready.png" alt="Generated Easy Spin Recovery Ride workout with coach's rationale" loading="lazy" />
+            <figcaption class="mono">fig. 1b · it writes you a workout</figcaption>
+          </figure>
+        </div>
       </Itch>
       <Itch number={2} headline="I wanted to ride a real climb without leaving Australia.">
         <p>
@@ -62,8 +70,8 @@ import { SubscribeCard } from "../components/SubscribeCard";
           whatever I was already doing. So I built that too.
         </p>
         <figure slot="figure" class="screenshot-slot">
-          <div class="screenshot-frame">screenshot: climb mode</div>
-          <figcaption class="mono">fig. 2</figcaption>
+          <img src="/screenshots/climb-ventoux.png" alt="Mont Ventoux climb detail with map and elevation profile" loading="lazy" />
+          <figcaption class="mono">fig. 2 · Ventoux, on my driveway</figcaption>
         </figure>
       </Itch>
       <Itch number={3} headline="I wanted it to not be boring.">
@@ -74,7 +82,30 @@ import { SubscribeCard } from "../components/SubscribeCard";
           interesting. Sometimes they&apos;re at your expense.
           That&apos;s fine.
         </p>
+        <div slot="figure" class="screenshot-pair">
+          <figure class="screenshot-slot">
+            <img src="/screenshots/workout-active.png" alt="In-workout screen with coach Wade telling Reid to chill the fuck out for 60 minutes" loading="lazy" />
+            <figcaption class="mono">fig. 3a · coach has opinions</figcaption>
+          </figure>
+          <figure class="screenshot-slot">
+            <img src="/screenshots/ride-summary.png" alt="Post-ride summary with coach's comment that Reid went full feral on a recovery spin" loading="lazy" />
+            <figcaption class="mono">fig. 3b · so does the writeup</figcaption>
+          </figure>
+        </div>
       </Itch>
+      <aside class="also">
+        <p class="mono also-label">also in there</p>
+        <div class="screenshot-pair">
+          <figure class="screenshot-slot">
+            <img src="/screenshots/history.png" alt="History tab with YTD stats, top efforts, and a list of recent rides" loading="lazy" />
+            <figcaption class="mono">fig. 4a · history</figcaption>
+          </figure>
+          <figure class="screenshot-slot">
+            <img src="/screenshots/career.png" alt="Career screen with progression levels for each training zone" loading="lazy" />
+            <figcaption class="mono">fig. 4b · career levels</figcaption>
+          </figure>
+        </div>
+      </aside>
       <WobblyRule />
       <WhatItIsnt />
       <WobblyRule />
@@ -83,22 +114,49 @@ import { SubscribeCard } from "../components/SubscribeCard";
     </main>
 
     <style>
-      .screenshot-slot { margin: 1.5rem 0 0; }
-      .screenshot-frame {
-        aspect-ratio: 9 / 16;
-        max-width: 240px;
-        background: #ffffff80;
-        border: 1px dashed var(--color-ink);
-        display: grid;
-        place-items: center;
-        text-align: center;
-        padding: 1rem;
-        color: var(--color-ink);
-        opacity: 0.7;
-        font-family: var(--font-mono);
-        font-size: 0.78rem;
+      .screenshot-slot {
+        margin: 1.5rem 0 0;
+        max-width: 220px;
       }
-      figcaption { margin-top: 0.5rem; opacity: 0.6; }
+      .screenshot-slot img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--color-ink);
+        border-radius: 14px;
+        box-shadow: 4px 5px 0 rgba(27, 27, 27, 0.08);
+        background: #000;
+      }
+      .screenshot-pair {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem 1rem;
+        margin: 1.5rem 0 0;
+      }
+      .also {
+        margin: 2.5rem 0 0;
+        padding-left: calc(4.5rem + 1rem);
+      }
+      .also-label {
+        margin: 0 0 0.25rem;
+        opacity: 0.6;
+        font-size: 0.7rem;
+      }
+      .also .screenshot-pair { margin: 0.5rem 0 0; }
+      @media (max-width: 30rem) {
+        .also { padding-left: calc(3.2rem + 1rem); }
+      }
+      .screenshot-pair .screenshot-slot {
+        margin: 0;
+        flex: 1 1 180px;
+        max-width: 220px;
+      }
+      .screenshot-slot figcaption {
+        margin-top: 0.5rem;
+        opacity: 0.6;
+        font-size: 0.62rem;
+        letter-spacing: 0.05em;
+      }
     </style>
   </body>
 </html>
