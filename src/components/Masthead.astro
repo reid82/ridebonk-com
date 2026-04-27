@@ -1,9 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import banana from "../assets/banana.png";
 ---
 <header class="masthead">
-  <Image src={banana} alt="" width={120} height={120} class="banana" />
+  <img src="/banana.png" alt="" width="120" height="120" class="banana" loading="eager" decoding="async" />
   <h1>BONK</h1>
   <p class="mono strap">Vol. 0 / In Development / Somewhere in Australia</p>
 </header>
