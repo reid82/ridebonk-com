@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://ridebonk.com",
   output: "server",
-  adapter: cloudflare({ platformProxy: { enabled: true } }),
+  adapter: cloudflare({ platformProxy: { enabled: true }, imageService: "compile" }),
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
