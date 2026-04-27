@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import banana from "../assets/banana.png";
+---
+<header class="masthead">
+  <Image src={banana} alt="" width={120} height={120} class="banana" />
+  <h1>BONK</h1>
+  <p class="mono strap">Vol. 0 / In Development / Somewhere in Australia</p>
+</header>
+
+<style>
+  .masthead {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: end;
+    column-gap: 1rem;
+    margin: 0 0 2.5rem;
+  }
+  .banana {
+    grid-row: 1 / span 2;
+    width: 96px;
+    height: 96px;
+    align-self: center;
+  }
+  h1 {
+    grid-column: 2;
+    font-size: clamp(4rem, 14vw, 7rem);
+    line-height: 0.9;
+    margin: 0;
+    letter-spacing: -0.04em;
+  }
+  .strap {
+    grid-column: 2;
+    margin: 0.5rem 0 0;
+    color: var(--color-ink);
+    opacity: 0.7;
+  }
+</style>
