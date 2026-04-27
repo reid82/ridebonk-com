@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && printf '_worker.js\\n_routes.json\\n' > dist/.assetsignore",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest run",
