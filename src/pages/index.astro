@@ -107,10 +107,16 @@ import SubscribeCard from "../components/SubscribeCard.astro";
           from your wrist straight into the ride. Pair the watch, hit
           start, ride.
         </p>
-        <figure slot="figure" class="screenshot-slot">
-          <img src="/screenshots/watch-bonk-hr.png" alt="Apple Watch Ultra running the BONK companion app, showing live heart rate at 142 BPM with the sad banana logo" loading="lazy" />
-          <figcaption class="mono">fig. 4 · live from the wrist</figcaption>
-        </figure>
+        <div slot="figure" class="screenshot-pair">
+          <figure class="screenshot-slot">
+            <img src="/screenshots/watch-bonk-hr.png" alt="Apple Watch Ultra running BONK showing live heart rate at 142 BPM with the sad banana logo" loading="lazy" />
+            <figcaption class="mono">fig. 4a · live from the wrist</figcaption>
+          </figure>
+          <figure class="screenshot-slot">
+            <img src="/screenshots/watch-bonk-controls.png" alt="Apple Watch Ultra running BONK in ride mode: heart rate 142 bpm, Connected status, Pause and Skip buttons, full-width End button" loading="lazy" />
+            <figcaption class="mono">fig. 4b · controls on the wrist</figcaption>
+          </figure>
+        </div>
       </Itch>
       <Itch number={5} headline="I wanted my Kickr to actually feel like a bike.">
         <p>
