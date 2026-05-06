@@ -3,6 +3,11 @@
 <footer class="colophon mono">
   <p>reid, somewhere in australia</p>
   <p>built with love and coffee.</p>
+  <p class="legal">
+    <a href="/legal/privacy">privacy</a>
+    <span aria-hidden="true">·</span>
+    <a href="/legal/terms">terms</a>
+  </p>
 </footer>
 
 <style>
@@ -11,4 +16,14 @@
     opacity: 0.6;
   }
   .colophon p { margin: 0 0 0.4rem; }
+  .colophon .legal { margin-top: 0.8rem; }
+  .colophon .legal a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  .colophon .legal span {
+    margin: 0 0.4rem;
+    opacity: 0.6;
+  }
 </style>

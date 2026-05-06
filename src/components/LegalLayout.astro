@@ -1,0 +1,130 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pageTitle: string;
+  lastUpdated: string;
+  url: string;
+}
+
+const { title, description, pageTitle, lastUpdated, url } = Astro.props;
+
+import "../styles/global.css";
+import WobblyRule from "./WobblyRule.astro";
+import Colophon from "./Colophon.astro";
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://ridebonk.com/og.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={url} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <main>
+      <header class="legal-masthead">
+        <a href="/" class="wordmark mono">BONK</a>
+        <p class="mono strap">{lastUpdated}</p>
+      </header>
+      <WobblyRule />
+      <h1>{pageTitle}</h1>
+      <article class="legal-body">
+        <slot />
+      </article>
+      <WobblyRule />
+      <nav class="legal-nav mono" aria-label="Legal navigation">
+        <a href="/legal/privacy">Privacy Policy</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="/legal/terms">Terms of Service</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="/">Back to home</a>
+      </nav>
+      <Colophon />
+    </main>
+
+    <style>
+      .legal-masthead {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0 0 1.5rem;
+      }
+      .wordmark {
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1rem;
+        letter-spacing: 0.12em;
+      }
+      .strap {
+        margin: 0;
+        opacity: 0.7;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 7vw, 3.4rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        margin: 0 0 2rem;
+      }
+      .legal-body :global(h2) {
+        font-size: 1.4rem;
+        margin: 2.5rem 0 0.6rem;
+        line-height: 1.2;
+      }
+      .legal-body :global(h2:first-of-type) {
+        margin-top: 0;
+      }
+      .legal-body :global(p),
+      .legal-body :global(ul),
+      .legal-body :global(ol) {
+        margin: 0 0 1.1em;
+      }
+      .legal-body :global(ul),
+      .legal-body :global(ol) {
+        padding-left: 1.4em;
+      }
+      .legal-body :global(li) {
+        margin: 0 0 0.45em;
+      }
+      .legal-body :global(strong) {
+        font-weight: 700;
+      }
+      .legal-body :global(em) {
+        font-style: italic;
+      }
+      .legal-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.75rem;
+        align-items: baseline;
+        margin: 0 0 1rem;
+      }
+      .legal-nav .sep {
+        opacity: 0.4;
+      }
+      .legal-nav a {
+        text-decoration: none;
+        border-bottom: 2px solid var(--color-mustard);
+      }
+    </style>
+  </body>
+</html>

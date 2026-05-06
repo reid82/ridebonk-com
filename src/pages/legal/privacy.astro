@@ -1,0 +1,137 @@
+---
+export const prerender = true;
+import LegalLayout from "../../components/LegalLayout.astro";
+
+const LAST_UPDATED = "2 May 2026";
+const CONTACT_EMAIL = "hello@ridebonk.com";
+---
+<LegalLayout
+  title="Privacy Policy · Bonk"
+  description="Bonk Privacy Policy"
+  pageTitle="Privacy Policy"
+  lastUpdated={`Last updated · ${LAST_UPDATED}`}
+  url="https://ridebonk.com/legal/privacy"
+>
+  <h2>Who We Are</h2>
+  <p>
+    Bonk is operated by <strong>Alexell Media Pty Ltd</strong>, a company
+    registered in Victoria, Australia (referred to here as "we", "us",
+    or "Bonk"). We are the data controller for the personal information
+    described in this policy.
+  </p>
+  <p>
+    Privacy questions, complaints, or data requests:
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+  </p>
+
+  <h2>Information We Collect</h2>
+  <ul>
+    <li><strong>Account:</strong> email address and display name (via Supabase Auth).</li>
+    <li><strong>Fitness profile:</strong> FTP, heart rate zones, threshold HR, weight (optional).</li>
+    <li><strong>Ride and training data:</strong> ride samples (power, heart rate, cadence, speed), TSS / CTL / ATL / TSB, route polylines.</li>
+    <li><strong>Workout preferences and notes:</strong> energy, motivation, leg state, free-form rider notes.</li>
+    <li><strong>Voice data:</strong> short voice clips for push-to-talk coaching. Audio is sent to OpenAI Whisper for transcription and is not stored after transcription completes.</li>
+    <li><strong>Device data:</strong> Bluetooth peripheral identifiers (trainers, power meters, HR straps), trainer/meter model strings, app version, OS version.</li>
+    <li><strong>Strava data (only if you connect Strava):</strong> activity history, segment efforts, route polylines, photos attached to rides, Strava athlete ID, OAuth tokens.</li>
+    <li><strong>AI-generated artefacts:</strong> coach commentary, share-card headlines, generated imagery, produced by us using your data and stored against your account.</li>
+    <li><strong>Diagnostics:</strong> error reports, performance traces, request logs (no full request bodies).</li>
+  </ul>
+
+  <h2>What We Don't Collect</h2>
+  <ul>
+    <li>Continuous GPS location. We only ingest route polylines that come back from Strava.</li>
+    <li>Health data outside cycling-specific metrics (no sleep, no nutrition, no menstrual data).</li>
+    <li>Payment or billing information. Bonk does not currently process payments.</li>
+    <li>Advertising identifiers. We do not run third-party advertising.</li>
+  </ul>
+
+  <h2>How We Use Your Data</h2>
+  <p>We use your data to:</p>
+  <ul>
+    <li>Provide the core service: generate personalised workouts, calculate training load, render coach commentary and share cards, and sync rides to Strava.</li>
+    <li>Operate, secure, and debug the app, including incident response.</li>
+    <li>Communicate with you about the service (e.g. account, security, material changes to terms).</li>
+    <li>Improve our AI prompts and models, see "AI Training and Model Improvement" below.</li>
+  </ul>
+  <p>
+    For users in the European Economic Area, United Kingdom, or Switzerland, our lawful bases under the GDPR / UK GDPR are: (a) <em>performance of a contract</em> for core service delivery, (b) <em>legitimate interests</em> for diagnostics, security, and product improvement, and (c) <em>consent</em> where you have explicitly opted in (e.g. connecting Strava, granting microphone access).
+  </p>
+
+  <h2>AI Training and Model Improvement</h2>
+  <p>
+    Bonk uses third-party large language models and generative image models (currently OpenRouter-routed LLMs and Google's Gemini image API) to produce coach commentary, share-card text, and vibe imagery. Your prompts and the generated outputs are processed by these providers under their own terms; we do not control whether they retain prompt content, but we configure providers to disable training on our content where the provider offers that setting.
+  </p>
+  <p>
+    Separately, we may use de-identified, aggregated examples of prompts and outputs to evaluate and improve our own prompt templates. You can opt out of this internal evaluation use by emailing
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>; opting out does not affect the core service.
+  </p>
+
+  <h2>Third Parties We Share Data With</h2>
+  <p>We share data only with the service providers needed to run Bonk:</p>
+  <ul>
+    <li><strong>Supabase</strong> for authentication, database, and storage. <a href="https://supabase.com/privacy" rel="noopener noreferrer" target="_blank">supabase.com/privacy</a></li>
+    <li><strong>Railway</strong> for application hosting. <a href="https://railway.com/legal/privacy" rel="noopener noreferrer" target="_blank">railway.com/legal/privacy</a></li>
+    <li><strong>Strava</strong>, only if you connect your Strava account; activity sync and route data. <a href="https://www.strava.com/legal/privacy" rel="noopener noreferrer" target="_blank">strava.com/legal/privacy</a></li>
+    <li><strong>OpenAI</strong> for speech-to-text transcription (audio not retained by Bonk after transcription). <a href="https://openai.com/policies/privacy-policy" rel="noopener noreferrer" target="_blank">openai.com/policies/privacy-policy</a></li>
+    <li><strong>OpenRouter</strong> for LLM routing for coach commentary and copy. <a href="https://openrouter.ai/privacy" rel="noopener noreferrer" target="_blank">openrouter.ai/privacy</a></li>
+    <li><strong>ElevenLabs</strong> for text-to-speech voice synthesis for coach audio. <a href="https://elevenlabs.io/privacy" rel="noopener noreferrer" target="_blank">elevenlabs.io/privacy</a></li>
+    <li><strong>Google (Gemini API)</strong> for generative imagery for share cards. <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">policies.google.com/privacy</a></li>
+    <li><strong>Apple</strong> for App Store distribution and push notifications (APNs). <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">apple.com/legal/privacy</a></li>
+  </ul>
+  <p>We do not sell or rent personal information to anyone.</p>
+
+  <h2>International Transfers</h2>
+  <p>
+    Bonk is operated from Australia, and our service providers are primarily based in the United States and the European Union. When we transfer data out of the EEA, UK, or Switzerland, we rely on the European Commission's Standard Contractual Clauses (or equivalent UK / Swiss mechanisms) executed by our processors. By using the service you acknowledge this cross-border processing.
+  </p>
+
+  <h2>Data Retention</h2>
+  <ul>
+    <li>Account, fitness profile, and ride data: kept until you delete your account.</li>
+    <li>Voice clips: <strong>not retained</strong> after transcription completes.</li>
+    <li>AI-generated coach text and images: kept with the ride they belong to, until ride or account deletion.</li>
+    <li>Diagnostics and request logs: rolling 90-day window.</li>
+    <li>Backups: included in our database provider's rolling backups (typically 7 to 30 days) and purged on their schedule.</li>
+  </ul>
+
+  <h2>Security</h2>
+  <p>
+    All data is encrypted in transit (HTTPS) and at rest at the database layer. Access to user records is enforced by Postgres Row Level Security policies, and administrative access is limited to authorised personnel under MFA. We will notify affected users and the relevant regulator without undue delay if we become aware of a personal data breach likely to result in a risk to your rights.
+  </p>
+
+  <h2>Your Rights</h2>
+  <p>
+    <strong>Everyone:</strong> you can delete your Bonk account at any time from the app (Profile, Settings, Delete Account). Deletion removes your account, profile, ride data, and AI-generated content, and revokes our access to your Strava account. Some derived backups may persist for the retention windows above.
+  </p>
+  <p>
+    <strong>Australian residents (Privacy Act 1988 / APPs):</strong> you have a right to access and correct your personal information, and to make a complaint. We aim to respond within 30 days. If you are not satisfied with our response, you can complain to the Office of the Australian Information Commissioner: <a href="https://www.oaic.gov.au" rel="noopener noreferrer" target="_blank">oaic.gov.au</a>.
+  </p>
+  <p>
+    <strong>EEA / UK / Swiss residents (GDPR / UK GDPR):</strong> you have rights of access, rectification, erasure, restriction, portability, and objection, plus the right to withdraw consent and the right to lodge a complaint with your supervisory authority. To exercise any of these, email
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+  </p>
+  <p>
+    <strong>California residents (CCPA / CPRA):</strong> you have rights to know, delete, correct, and limit the use of sensitive personal information, and the right not to be discriminated against for exercising those rights. We do not sell or share personal information for cross-context behavioural advertising.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    Bonk is rated 17+ and is not intended for anyone under 16. We do not knowingly collect personal information from children under 16. If you believe a child under 16 has provided us with personal data, please contact us and we will delete it.
+  </p>
+
+  <h2>Cookies and Local Storage</h2>
+  <p>
+    On the web, Bonk uses only the cookies and local storage required to keep you signed in (managed by Supabase Auth). We do not use tracking, analytics, or advertising cookies. The mobile app does not use cookies.
+  </p>
+
+  <h2>Changes to This Policy</h2>
+  <p>
+    We may update this Privacy Policy from time to time. Material changes will be communicated in-app or by email; the "Last updated" date above is always current. Continued use of Bonk after a change takes effect means you accept the updated policy.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Alexell Media Pty Ltd, Victoria, Australia.
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+  </p>
+</LegalLayout>
