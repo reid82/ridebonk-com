@@ -1,0 +1,20 @@
+---
+import CoachWidget, { type CoachCardData } from "./CoachWidget";
+import { COACHES } from "../data/coaches";
+
+const cards: CoachCardData[] = COACHES.map(({ id, name, voiceLabel, blurb, adult }) => ({
+  id,
+  name,
+  voiceLabel,
+  blurb,
+  adult,
+}));
+---
+<aside class="coaches">
+  <p class="mono coaches__label">also in there &middot; the coaches</p>
+  <p class="coaches__lede">
+    Thirteen personalities. Press play on any of them.
+    They&apos;ll say a few words.
+  </p>
+  <CoachWidget client:visible coaches={cards} />
+</aside>
