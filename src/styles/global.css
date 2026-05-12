@@ -139,3 +139,121 @@ a {
   font-size: 1.4rem;
   margin: 0;
 }
+
+/* ---------- coach widget ---------- */
+
+.coaches {
+  margin: 2.75rem 0 0;
+  padding-left: calc(4.5rem + 1rem);
+}
+
+.coaches__label {
+  margin: 0 0 0.25rem;
+  opacity: 0.6;
+  font-size: 0.7rem;
+}
+
+.coaches__lede {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 30rem) {
+  .coaches {
+    padding-left: calc(3.2rem + 1rem);
+  }
+}
+
+.coach-widget__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent);
+}
+
+.coach-widget__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent);
+}
+
+.coach-widget__text {
+  min-width: 0;
+}
+
+.coach-widget__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.15;
+  margin: 0 0 0.15rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.coach-widget__chip {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  background: var(--color-mustard);
+  color: var(--color-ink);
+  padding: 1px 4px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.coach-widget__voice {
+  margin: 0 0 0.3rem;
+  opacity: 0.6;
+  font-size: 0.65rem;
+}
+
+.coach-widget__blurb {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.coach-widget__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border: 1.5px solid var(--color-ink);
+  background: var(--color-mustard);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--color-ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.coach-widget__btn:hover,
+.coach-widget__btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  outline: none;
+}
+
+.coach-widget__btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--color-ink);
+}
+
+.coach-widget__btn[aria-pressed="true"] {
+  background: var(--color-paper);
+}
+
+.coach-widget__glyph {
+  font-size: 0.85rem;
+  line-height: 1;
+}
