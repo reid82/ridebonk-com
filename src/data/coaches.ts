@@ -8,6 +8,8 @@
  *   - a voiceId or settings change (then re-run with --force)
  */
 
+export type CoachCategory = "tough" | "banter" | "pro";
+
 export interface Coach {
   id: string;
   name: string;
@@ -22,6 +24,7 @@ export interface Coach {
     use_speaker_boost?: boolean;
   };
   adult?: boolean;
+  category: CoachCategory;
 }
 
 export const COACHES: Coach[] = [
@@ -33,6 +36,7 @@ export const COACHES: Coach[] = [
     previewLine: "On your feet. Pain is information. Pedal.",
     voiceId: "pNInz6obpgDQGcFmaJgB",
     settings: { stability: 0.4, similarity_boost: 0.85, style: 0.6, use_speaker_boost: true },
+    category: "tough",
   },
   {
     id: "clinical",
@@ -42,6 +46,7 @@ export const COACHES: Coach[] = [
     previewLine: "Targeting sweet-spot: sustained output at 88 to 94 percent of threshold.",
     voiceId: "onwK4e9ZLuTAKqWW03F9",
     settings: { stability: 0.7, similarity_boost: 0.65, style: 0.1 },
+    category: "pro",
   },
   {
     id: "mate",
@@ -51,6 +56,7 @@ export const COACHES: Coach[] = [
     previewLine: "Yeah nah, righto mate, quick sanity check, you remember how to pedal, yeah?",
     voiceId: "IKne3meq5aSn9XLyUdCD",
     settings: { stability: 0.5, similarity_boost: 0.7, style: 0.4 },
+    category: "banter",
   },
   {
     id: "soigneuse",
@@ -60,6 +66,7 @@ export const COACHES: Coach[] = [
     previewLine: "Allez, mon brave. Les jambes — they remember. Trust them. Piano piano.",
     voiceId: "FvmvwvObRqIHojkEGh5N",
     settings: { stability: 0.6, similarity_boost: 0.75, style: 0.35 },
+    category: "pro",
   },
   {
     id: "boss",
@@ -69,6 +76,7 @@ export const COACHES: Coach[] = [
     previewLine: "Hold the wheel. Don't close yet. We bring it back in three.",
     voiceId: "9BWtsMINqrJLrRacOk9x",
     settings: { stability: 0.55, similarity_boost: 0.75, style: 0.3 },
+    category: "pro",
   },
   {
     id: "commentator",
@@ -78,6 +86,7 @@ export const COACHES: Coach[] = [
     previewLine: "And here he is, our rider, attacking the slopes — reminds me of Hinault in '85, though admittedly Hinault had better socks.",
     voiceId: "JBFqnCBsd6RMkjVDRZzb",
     settings: { stability: 0.5, similarity_boost: 0.7, style: 0.45 },
+    category: "pro",
   },
   {
     id: "audax",
@@ -87,6 +96,7 @@ export const COACHES: Coach[] = [
     previewLine: "When I rode PBP in '79 the rain didn't stop for two days. You'll be alright, lad.",
     voiceId: "nPczCjzI2devNBz1zQrb",
     settings: { stability: 0.7, similarity_boost: 0.65, style: 0.15 },
+    category: "tough",
   },
   {
     id: "headmistress",
@@ -96,6 +106,7 @@ export const COACHES: Coach[] = [
     previewLine: "I have read your power numbers. We shall be having a conversation after assembly.",
     voiceId: "Xb7hH8MSUJpSbSDYk0k2",
     settings: { stability: 0.65, similarity_boost: 0.7, style: 0.25 },
+    category: "tough",
   },
   {
     id: "gravel",
@@ -105,6 +116,7 @@ export const COACHES: Coach[] = [
     previewLine: "Yeah dude, just sending it on the indoor today, that's sick. Brapp.",
     voiceId: "cjVigY5qzO86Huf0OWal",
     settings: { stability: 0.55, similarity_boost: 0.7, style: 0.3 },
+    category: "banter",
   },
   {
     id: "wade",
@@ -115,6 +127,7 @@ export const COACHES: Coach[] = [
     voiceId: "2EiwWnXFnvU5JabPnv8n",
     settings: { stability: 0.35, similarity_boost: 0.75, style: 0.65, use_speaker_boost: true },
     adult: true,
+    category: "banter",
   },
   {
     id: "mickey",
@@ -125,6 +138,7 @@ export const COACHES: Coach[] = [
     voiceId: "CYw3kZ02Hs0563khs1Fj",
     settings: { stability: 0.35, similarity_boost: 0.8, style: 0.7, use_speaker_boost: true },
     adult: true,
+    category: "tough",
   },
   {
     id: "texas-champ",
@@ -135,6 +149,7 @@ export const COACHES: Coach[] = [
     voiceId: "l7uf46H2eclzHIFxaO4N",
     settings: { stability: 0.55, similarity_boost: 0.8, style: 0.45, use_speaker_boost: true },
     adult: true,
+    category: "banter",
   },
   {
     id: "velominati",
@@ -145,5 +160,6 @@ export const COACHES: Coach[] = [
     voiceId: "ttNi9wVM8M97tsxE7PFZ",
     settings: { stability: 0.4, similarity_boost: 0.8, style: 0.6, use_speaker_boost: true },
     adult: true,
+    category: "tough",
   },
 ];

@@ -79,6 +79,10 @@ import Coaches from "../components/Coaches.astro";
             <img src="/screenshots/climb-falls-creek.png" alt="Live climb screen showing Falls Creek Back of Falls in progress with gradient, watts, BPM and gear" loading="lazy" />
             <figcaption class="mono">fig. 2b · Falls Creek, mid-climb</figcaption>
           </figure>
+          <figure class="screenshot-slot">
+            <img src="/screenshots/climb-3d.png" alt="3D satellite view of a climb with the route traced up a mountainside, gear and pedal-to-start callouts overlaid" loading="lazy" />
+            <figcaption class="mono">fig. 2c · 3D, before you commit</figcaption>
+          </figure>
         </div>
       </Itch>
       <Itch number={3} headline="I wanted it to not be boring.">
@@ -105,9 +109,10 @@ import Coaches from "../components/Coaches.astro";
         <p>
           Putting on a cold heart rate strap at 5am in winter is one of
           those small daily indignities I built this app to avoid.
-          There&apos;s a companion watch app that streams your heart rate
-          from your wrist straight into the ride. Pair the watch, hit
-          start, ride.
+          There&apos;s a companion watch app that pushes your heart rate
+          straight to the server from your wrist, so it shows up in the
+          ride no matter which device you&apos;re riding on. Phone, iPad,
+          doesn&apos;t matter. Pair the watch, hit start, ride.
         </p>
         <div slot="figure" class="screenshot-pair">
           <figure class="screenshot-slot">
@@ -133,12 +138,12 @@ import Coaches from "../components/Coaches.astro";
           <figcaption class="mono">fig. 5 · what it talks to</figcaption>
         </figure>
       </Itch>
-      <Itch number={6} headline="I wanted my iPad free for The Sopranos.">
+      <Itch number={6} headline="I wanted my iPad free for TV and movies.">
         <p>
-          Bonk runs on the phone. The phone drives the trainer, talks to
-          the watch, and shows you the workout. The iPad gets to do what
-          an iPad is actually for: another episode of The Sopranos while
-          you grind through ninety minutes of threshold.
+          Bonk runs on the phone. It works on the iPad too, but I built
+          it for the phone: small, on the bars or the stem, out of the
+          way. The iPad gets to do what an iPad is actually for: a show
+          or a movie while you grind through ninety minutes of threshold.
         </p>
       </Itch>
       <Itch number={7} headline="I wanted Strava to do the heavy lifting.">
@@ -216,6 +221,31 @@ import Coaches from "../components/Coaches.astro";
         opacity: 0.6;
         font-size: 0.62rem;
         letter-spacing: 0.05em;
+      }
+
+      /* mobile: collapse pairs into a peek-and-snap horizontal gallery */
+      @media (max-width: 30rem) {
+        .screenshot-pair {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          overflow-y: visible;
+          scroll-snap-type: x mandatory;
+          gap: 0.85rem;
+          padding: 0.35rem 0.5rem 0.6rem 0.25rem;
+          margin-left: -0.25rem;
+          margin-right: -0.5rem;
+          scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
+        }
+        .screenshot-pair::-webkit-scrollbar { display: none; }
+        .screenshot-pair .screenshot-slot {
+          flex: 0 0 70%;
+          max-width: none;
+          scroll-snap-align: center;
+        }
+        .screenshot-pair .screenshot-slot:first-child { scroll-snap-align: start; }
+        .screenshot-pair .screenshot-slot:last-child { scroll-snap-align: end; }
       }
     </style>
   </body>

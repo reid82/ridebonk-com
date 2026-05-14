@@ -2,19 +2,19 @@
 import CoachWidget, { type CoachCardData } from "./CoachWidget";
 import { COACHES } from "../data/coaches";
 
-const cards: CoachCardData[] = COACHES.map(({ id, name, voiceLabel, blurb, adult }) => ({
+const cards: CoachCardData[] = COACHES.map(({ id, name, voiceLabel, blurb, adult, category }) => ({
   id,
   name,
   voiceLabel,
   blurb,
   adult,
+  category,
 }));
 ---
 <aside class="coaches">
   <p class="mono coaches__label">also in there &middot; the coaches</p>
   <p class="coaches__lede">
-    Thirteen personalities. Press play on any of them.
-    They&apos;ll say a few words.
+    Thirteen personalities, sorted by vibe. Press play on any of them.
   </p>
   <CoachWidget client:visible coaches={cards} />
 </aside>

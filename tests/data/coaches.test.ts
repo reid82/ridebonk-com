@@ -30,4 +30,18 @@ describe("coaches data", () => {
       ["mickey", "texas-champ", "velominati", "wade"]
     );
   });
+
+  it("every coach has a valid category", () => {
+    const allowed = new Set(["tough", "banter", "pro"]);
+    for (const c of COACHES) {
+      expect(allowed.has(c.category)).toBe(true);
+    }
+  });
+
+  it("every category has at least one coach", () => {
+    const present = new Set(COACHES.map((c) => c.category));
+    expect(present.has("tough")).toBe(true);
+    expect(present.has("banter")).toBe(true);
+    expect(present.has("pro")).toBe(true);
+  });
 });
