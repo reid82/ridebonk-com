@@ -1,18 +1,28 @@
 ---
-const testflightUrl = "https://testflight.apple.com/join/zvuZuYu1";
+import { APP } from "../data/app";
+
 const discordUrl = "https://discord.gg/pbcbxBxr";
 const email = "reid@reidbates.com";
 ---
 <aside class="subscribe-card">
   <h2>Want to try it?</h2>
   <p>
-    It&apos;s on TestFlight. iOS for now, Android coming. New builds
-    land as I push them, which lately is most days. Leave whenever
-    you like.
+    It&apos;s on the App Store. Free, iPhone, iOS 15 and up. Android
+    coming. I still push builds most days, so it changes under you.
   </p>
   <p class="cta-line">
-    <a class="cta-btn" href={testflightUrl} rel="noopener" target="_blank">
-      Join the TestFlight
+    <a
+      class="store-badge"
+      href={APP.storeUrl}
+      rel="noopener"
+      target="_blank"
+    >
+      <img
+        src="/download-on-the-app-store.svg"
+        alt={`Download ${APP.name} on the App Store`}
+        width="120"
+        height="40"
+      />
     </a>
   </p>
   <p class="contact-line">
@@ -27,27 +37,30 @@ const email = "reid@reidbates.com";
   .cta-line {
     margin: 1.1rem 0 0;
   }
-  .cta-btn {
+  /* Apple's guidelines: don't alter the artwork, keep clear space of
+     at least 10% of the badge height, min height 40px. The padding is
+     the clear space; the shadow sits on the wrapper, never the badge. */
+  .store-badge {
     display: inline-block;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: -0.01em;
-    padding: 0.6rem 1rem;
-    background: var(--color-mustard);
-    color: var(--color-ink);
+    padding: 4px;
+    background: color-mix(in srgb, var(--color-paper) 50%, white 50%);
     border: 1.5px solid var(--color-ink);
-    text-decoration: none;
     box-shadow: 3px 3px 0 var(--color-ink);
+    line-height: 0;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .cta-btn:hover,
-  .cta-btn:focus-visible {
+  .store-badge img {
+    display: block;
+    height: 40px;
+    width: auto;
+  }
+  .store-badge:hover,
+  .store-badge:focus-visible {
     transform: translate(-2px, -2px);
     box-shadow: 5px 5px 0 var(--color-ink);
     outline: none;
   }
-  .cta-btn:active {
+  .store-badge:active {
     transform: translate(1px, 1px);
     box-shadow: 2px 2px 0 var(--color-ink);
   }

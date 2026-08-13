@@ -9,25 +9,66 @@ import Colophon from "../components/Colophon.astro";
 import WobblyRule from "../components/WobblyRule.astro";
 import SubscribeCard from "../components/SubscribeCard.astro";
 import Coaches from "../components/Coaches.astro";
+import { APP } from "../data/app";
+
+const site = "https://ridebonk.com";
+const description =
+  "An AI cycling coach that writes you a workout, rides real climbs, and talks to your smart trainer. Free on the App Store.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: APP.name,
+  alternateName: "BONK",
+  description,
+  applicationCategory: APP.category,
+  operatingSystem: `iOS ${APP.minimumOs}+`,
+  url: `${site}/`,
+  installUrl: APP.storeUrl,
+  datePublished: APP.released,
+  image: `${site}/og.png`,
+  offers: {
+    "@type": "Offer",
+    price: APP.price,
+    priceCurrency: APP.currency,
+  },
+  author: {
+    "@type": "Organization",
+    name: "Alexell Media Pty Ltd",
+  },
+};
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>BONK | a workout app i made for myself</title>
-    <meta name="description" content="A workout app I built for myself. It's not done." />
+    <title>Ride Bonk | a workout app i made for myself</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`${site}/`} />
 
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <meta property="og:title" content="BONK" />
-    <meta property="og:description" content="A workout app I built for myself. It's not done." />
-    <meta property="og:image" content="https://ridebonk.com/og.png" />
+    <meta name="apple-itunes-app" content={`app-id=${APP.id}`} />
+
+    <meta property="og:title" content="Ride Bonk" />
+    <meta property="og:site_name" content="Ride Bonk" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${site}/og.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="BONK — a workout app i made for myself" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ridebonk.com/" />
+    <meta property="og:url" content={`${site}/`} />
+
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ride Bonk" />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site}/og.png`} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

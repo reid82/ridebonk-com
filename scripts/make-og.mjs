@@ -14,9 +14,9 @@ const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="#f5efe2"/>
   <text x="80" y="280" font-family="Iowan Old Style, Charter, Georgia, serif" font-weight="700" font-size="220" fill="#1b1b1b" letter-spacing="-8">BONK</text>
-  <text x="84" y="340" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" fill="#1b1b1b" opacity="0.7">VOL. 0 / IN DEVELOPMENT / SOMEWHERE IN AUSTRALIA</text>
+  <text x="84" y="340" font-family="JetBrains Mono, ui-monospace, monospace" font-size="20" fill="#1b1b1b" opacity="0.7">VOL. 1 / ON THE APP STORE / SOMEWHERE IN AUSTRALIA</text>
   <text x="80" y="430" font-family="Iowan Old Style, Charter, Georgia, serif" font-size="34" fill="#1b1b1b">a workout app i made for myself.</text>
-  <text x="80" y="478" font-family="Iowan Old Style, Charter, Georgia, serif" font-size="34" fill="#1b1b1b" opacity="0.7">it's not done.</text>
+  <text x="80" y="478" font-family="Iowan Old Style, Charter, Georgia, serif" font-size="34" fill="#1b1b1b" opacity="0.7">it's out now.</text>
 </svg>
 `;
 

@@ -20,12 +20,14 @@ import Colophon from "./Colophon.astro";
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
 
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <meta property="og:title" content={title} />
+    <meta property="og:site_name" content="Ride Bonk" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="https://ridebonk.com/og.png" />
     <meta property="og:type" content="article" />
